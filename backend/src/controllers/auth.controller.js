@@ -190,7 +190,7 @@ export const checkAuth = (req, res) => {
 
     }
 
-    catch (error) {
+    catch (error) { 
 
         console.log("Error In checkAuth Controller", error.message);
 

@@ -58,7 +58,7 @@ export const useAuthStore = create((set) => ({
 
         catch (error) {
 
-            toast.error(error.response.data.message, {id: "signup-invalid-error"});
+            toast.error(error.response.data.message, { id: "signup-invalid-error" });
 
         }
 
@@ -86,7 +86,7 @@ export const useAuthStore = create((set) => ({
 
         catch (error) {
 
-            toast.error(error.response.data.message, {id: "login-invalid-error"});
+            toast.error(error.response.data.message, { id: "login-invalid-error" });
 
         }
 
@@ -102,20 +102,50 @@ export const useAuthStore = create((set) => ({
 
         try {
 
-          await axiosInstance.post("/auth/logout");
+            await axiosInstance.post("/auth/logout");
 
-          set({ authUser: null });
+            set({ authUser: null });
 
-          toast.success("Logged Out Successfully");
+            toast.success("Logged Out Successfully");
+
+        }
+
+        catch (error) {
+
+            toast.error(error.response.data.message, { id: "logout-invalid-error" });
+
+        }
+
+    },
+
+    updateProfile: async (data) => {
+
+        set({ isUpdatingProfile: true });
+
+        try {
+
+            const res = await axiosInstance.put("/auth/update-profile", data);
+
+            set({ authUser: res.data });
+
+            toast.success("Profile Updated Successfully");
 
         } 
         
         catch (error) {
 
-          toast.error(error.response.data.message, {id: "logout-invalid-error"});
+            console.log("Error In updateProfile:", error);
+
+            toast.error(error.response.data.message);
+
+        } 
+        
+        finally {
+
+            set({ isUpdatingProfile: false });
 
         }
 
-      },
+    },
 
 }));
