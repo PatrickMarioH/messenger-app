@@ -7,7 +7,7 @@ import cors from "cors";
 
 // Import From Other Files
 
-import {connectDB} from "./lib/db.js";
+import { connectDB } from "./lib/db.js";
 
 import authRoutes from "./routes/auth.route.js";
 

@@ -5,7 +5,7 @@ import User from "../models/user.model.js";
 export const protectRoute = async (req, res, next) => {
 
     try {
-        
+
         const token = req.cookies.jwt
 
         if (!token) {
@@ -33,14 +33,14 @@ export const protectRoute = async (req, res, next) => {
 
         next();
 
-    } 
-    
+    }
+
     catch (error) {
 
         console.log("Error In protectRoute Middleware", error.message);
 
         res.status(500).json({ message: "Internal Server Error" });
-        
+
     }
 
 };
