@@ -5,8 +5,6 @@ import dotenv from "dotenv";
 import cookieParser from "cookie-parser";
 import cors from "cors";
 
-import path from "path";
-
 // Import From Other Files
 
 import { connectDB } from "./lib/db.js";
