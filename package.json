@@ -18,8 +18,5 @@
   "bugs": {
     "url": "https://github.com/PatrickMarioH/messenger-app/issues"
   },
-  "homepage": "https://github.com/PatrickMarioH/messenger-app#readme",
-  "engines": {
-    "node": "20.x"
-  }
+  "homepage": "https://github.com/PatrickMarioH/messenger-app#readme"
 }
