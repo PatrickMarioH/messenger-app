@@ -1,4 +1,5 @@
 import cloudinary from "../lib/cloudinary.js";
+
 import Message from "../models/message.model.js";
 
 import User from "../models/user.model.js";
@@ -26,6 +27,8 @@ export const getUsersForSideBar = async (req, res) => {
 };
 
 export const getMessages = async (req, res) => {
+
+    console.log("getMessages hit with param:", req.params.id);
 
     try {
 

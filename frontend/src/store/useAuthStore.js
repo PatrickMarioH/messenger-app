@@ -16,6 +16,8 @@ export const useAuthStore = create((set) => ({
 
     isCheckingAuth: true,
 
+    onlineUsers: [],
+
     checkAuth: async () => {
 
         try {
@@ -130,16 +132,16 @@ export const useAuthStore = create((set) => ({
 
             toast.success("Profile Updated Successfully");
 
-        } 
-        
+        }
+
         catch (error) {
 
             console.log("Error In updateProfile:", error);
 
             toast.error(error.response.data.message);
 
-        } 
-        
+        }
+
         finally {
 
             set({ isUpdatingProfile: false });
