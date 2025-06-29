@@ -15,6 +15,7 @@ A full-stack messaging application with basic real-time chat functionality, user
 
 ![HomePage](messenger-app-homepage.png)
 ![ProfilePage](messenger-app-profile.png)
+![SettingsPage](messenger-app-settings.png)
 
 ---
 
